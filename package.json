@@ -1,0 +1,9 @@
+{
+	"name" : "just",
+	"version" : "0.1.0",
+	"description" : "JavaScript Templates",
+	"keywords": [ "template" ],
+	"author" : "Vadim M. Baryshev <vadimbaryshev@gmail.com>",
+	"main" : "index",
+	"engines" : { "node": ">= 0.4.0" }
+}
