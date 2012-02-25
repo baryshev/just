@@ -23,7 +23,7 @@ var JUST = require('just');
 
 var just = new JUST({ root : __dirname + '/view' });
 
-just.render('page', { title: 'Hello, world!' }, function(error, html) {
+just.render('page', { title: 'Hello, World!' }, function(error, html) {
 	console.log(error);
 	console.log(html);
 });
@@ -40,7 +40,7 @@ var just = new JUST({ root : {
 				}
 			});
 
-just.render('page', { title: 'Hello, world!' }, function(error, html) {
+just.render('page', { title: 'Hello, World!' }, function(error, html) {
 	console.log(error);
 	console.log(html);
 });
@@ -82,7 +82,7 @@ or
 or 
 
 ```
-<% this.extend('layout', { customVar: 'hello world' }); %>
+<% this.extend('layout', { customVar: 'Hello, World!' }); %>
 ```
 
 Use
@@ -109,7 +109,7 @@ in parent template to define the insertion point.
 or
 
 ```
-<% this.partial('partial', { customVar: 'hello world' }); %>
+<% this.partial('partial', { customVar: 'Hello, World!' }); %>
 ```
 
 ### Blocks
