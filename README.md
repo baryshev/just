@@ -35,7 +35,7 @@ You may use JavaScript object as root.
 var JUST = require('just');
 
 var just = new JUST({ root : {
-				layout: '<html><head><%- title %></head><body><%*%></body></html>',
+				layout: '<html><head><title><%- title %></title></head><body><%*%></body></html>',
 				page: '<%! layout %><p>Page content</p>'
 				}
 			});
