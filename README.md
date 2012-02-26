@@ -161,7 +161,7 @@ Basically, include [just.min.js](https://github.com/baryshev/just/tree/master/ju
 ```js
 var just = new JUST({ root : '/view' });
 
-just.render('page', {}, function(error, html) {
+just.render('page', { title: 'Hello, World!' }, function(error, html) {
 	console.log(error);
 	console.log(html);
 });
