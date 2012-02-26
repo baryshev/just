@@ -59,8 +59,8 @@ See full example in [examples](https://github.com/baryshev/just/tree/master/exam
 ### JavaScript code
 
 ```
-<% for (var aricle in articles) { %>
-<% this.partial('article', { article: article }); %>
+<% for (var i = 0; i < articles.length; i++) { %>
+<% this.partial('article', { article: articles[i] }); %>
 <% } %>
 ```
 
