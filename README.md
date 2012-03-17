@@ -60,7 +60,7 @@ See full example in [examples](https://github.com/baryshev/just/tree/master/exam
 
 ```
 <% for (var i = 0; i < articles.length; i++) { %>
-<% this.partial('article', { article: articles[i] }); %>
+	<% this.partial('article', { article: articles[i] }); %>
 <% } %>
 ```
 
@@ -68,9 +68,9 @@ or
 
 ```
 <% if (user.authenticated) { %>
-<%@ partials/user %>
+	<%@ partials/user %>
 <% } else { %>
-<%@ partials/auth %>
+	<%@ partials/auth %>
 <% } %>
 ```
 
@@ -82,7 +82,7 @@ or
 or 
 
 ```
-<% this.extend('layout', { customVar: 'Hello, World!' }); %>
+<%! layout { customVar: 'Hello, World!' } %>
 ```
 
 Use
@@ -90,12 +90,6 @@ Use
 
 ```
 <%*%>
-```
-
-or
-
-```
-<% this.child(); %>
 ```
 
 in parent template to define the insertion point.
@@ -109,23 +103,15 @@ in parent template to define the insertion point.
 or
 
 ```
-<% this.partial('partial', { customVar: 'Hello, World!' }); %>
+<%@ partial { customVar: 'Hello, World!' } %>
 ```
 
 ### Blocks
 
 ```
 <%[ blockName %>
-<p>This is block content</p>
+	<p>This is block content</p>
 <%]%>
-```
-
-or
-
-```
-<% this.blockStart('blockName'); %>
-<p>This is block content</p>
-<% this.blockEnd(); %>
 ```
 
 Use
@@ -135,15 +121,29 @@ Use
 <%* blockName %>
 ```
 
-or
-
-```
-<% this.child('blockName'); %>
-```
-
 in parent template to define the insertion point.
 
 Blocks supports more than one level of inheritance and may be redefined.
+
+### Conditions
+
+```
+<%? someVar == 1 %>
+	<p>Var is 1</p>
+<%: someVar == 2 %>
+	<p>Var is 2</p>
+<%:%>
+	<p>Var is other</p>
+<%?%>
+```
+
+### Loops
+
+```
+<%| comments comment %>
+	<p><%= comment.text %></p>
+<%|%>
+```
 
 ## Options
 
