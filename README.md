@@ -21,7 +21,7 @@ JavaScript template engine.
 ```js
 var JUST = require('just');
 
-var just = new JUST({ root : __dirname + '/view' });
+var just = new JUST({ root : __dirname + '/view', useCache : true, ext : '.html' });
 
 just.render('page', { title: 'Hello, World!' }, function(error, html) {
 	console.log(error);
@@ -37,7 +37,7 @@ var JUST = require('just');
 var just = new JUST({ root : {
 				layout: '<html><head><title><%= title %></title></head><body><%*%></body></html>',
 				page: '<%! layout %><p>Page content</p>'
-				}
+				}, useCache : true
 			});
 
 just.render('page', { title: 'Hello, World!' }, function(error, html) {
@@ -148,9 +148,9 @@ Blocks supports more than one level of inheritance and may be redefined.
 ## Options
 
   - `root`            Templates root folder or JavaScript object containing templates
-  - `ext`             Extension of templates, defaulting to '.html' (not used for JavaScript objects as root)
-  - `useCache`        Compiled functions are cached, defaulting to true
-  - `watchForChanges` Automatic reloading of changed templates, defaulting to false (useful for debugging, not supported for client-side)
+  - `ext`             Extension of templates, defaulting to '' (not used for JavaScript objects as root)
+  - `useCache`        Compiled functions are cached, defaulting to false
+  - `watchForChanges` Automatic reloading of changed templates, defaulting to false (useful for debugging with enabled useCache, not supported for client-side)
   - `open`            Open tag, defaulting to '<%'
   - `close`           Closing tag, defaulting to '%>'
 
@@ -159,7 +159,7 @@ Blocks supports more than one level of inheritance and may be redefined.
 Basically, include [just.min.js](https://github.com/baryshev/just/tree/master/just.min.js) to a page and JUST ready to use.
 
 ```js
-var just = new JUST({ root : '/view' });
+var just = new JUST({ root : '/view', useCache : true });
 
 just.render('page', { title: 'Hello, World!' }, function(error, html) {
 	console.log(error);

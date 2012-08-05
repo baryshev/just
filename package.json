@@ -1,6 +1,6 @@
 {
 	"name" : "just",
-	"version" : "0.1.7",
+	"version" : "0.1.8",
 	"description" : "JavaScript template engine",
 	"keywords": [ "template" ],
 	"author" : "Vadim M. Baryshev <vadimbaryshev@gmail.com>",
