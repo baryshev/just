@@ -159,7 +159,7 @@ Blocks supports more than one level of inheritance and may be redefined.
 Basically, include [just.min.js](https://github.com/baryshev/just/tree/master/just.min.js) to a page and JUST ready to use.
 
 ```js
-var just = new JUST({ root : '/view', useCache : true });
+var just = new JUST({ root : '/view', useCache : true, ext : '.html' });
 
 just.render('page', { title: 'Hello, World!' }, function(error, html) {
 	console.log(error);
