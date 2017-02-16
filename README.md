@@ -18,6 +18,19 @@ JavaScript template engine.
 
 ## Usage
 
+#### Synchronously rendering template
+```js
+var just = new JUST({
+    root : {
+	exampleTpl: $("#exampleTpl").html()
+    }
+});
+
+var html = just.renderSync('exampleTpl', {title:"title text", text:"my text"})
+```
+
+#### Async rendering template
+
 ```js
 var JUST = require('just');
 
